@@ -1,0 +1,64 @@
+.flashed {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 40px;
+    right: 10px;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 17px;
+    background: var(--gray);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    transition: transform .3s;
+    transform: translateX(200%);
+    z-index: 101;
+}
+
+.flashed.show {
+    transform: translateX(0);
+}
+
+.flashed.success {
+    background: var(--green);
+}
+
+.flashed.news {
+    background: var(--cyan);
+}
+
+.flashed.error {
+    background: var(--red);
+}
+
+.flashed-content  {
+    position: relative;
+    width: 100%;
+}
+
+.flashed-content * {
+    margin: 0 5px;
+    color: #fff;
+}
+
+.flashed-content::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: -45px;
+    width: 0;
+    height: 0;
+    border: 15px solid transparent;
+}
+
+.flashed.success .flashed-content::after {
+    border-left-color: var(--green);
+}
+
+.flashed.error .flashed-content::after {
+    border-left-color: var(--red);
+}
+
+.flashed.news .flashed-content::after {
+    border-left-color: var(--cyan);
+}

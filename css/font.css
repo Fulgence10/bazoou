@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "Montserrat Black";
+  src: url("./font/Montserrat/static/Montserrat-Black.ttf");
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("./font/poppin/Poppins-Black.ttf");
+}
+@font-face {
+  font-family: "Poppins bold";  
+  src: url("./font/poppin/Poppins-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Poppins bold extra";  
+  src: url("./font/poppin/Poppins-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: "Poppins mx";  
+  src: url("./font/poppin/Poppins-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Poppins xs";  
+  src: url("./font/poppin/Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Play fair";  
+  src: url("./font/Playfair/PlayfairDisplay-BoldItalic.ttf");
+}

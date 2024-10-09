@@ -1,0 +1,392 @@
+/*
+<form action="" class="formboot">
+    <div class="fields-row">
+        <div class="fields-items">
+            <label for="name">Nom</label>
+            <input type="text" name="name" placeholder="toto">
+        </div>
+
+        <div class="fields-items">
+            <label for="last_name">Prenom</label>
+            <input type="text" name="last_name" placeholder="tata">
+        </div>
+    </div>
+     <div class="fields-items">
+        <label for="last_name">Prenom</label>
+        <input type="text" name="last_name" placeholder="tata">
+    </div>
+</form>
+*/
+
+.formboot {
+    display: block;
+    position: relative;
+    min-width: 320px;
+    padding: 20px;
+    font-family: inherit;
+}
+
+@media screen and (max-width: 411px) {
+   
+    .formboot {
+        width: 100%;
+        min-width: 100%;
+        padding: 10px;
+    }
+    
+}
+
+.error-formboot {
+    padding: 10px;
+    margin: 15px 0;
+    width: 100%;
+    color: #dc3545;
+    background: #dc354654;
+    border-left: 4px solid #dc3545;
+    border-radius: 5px;
+}
+
+.error-input {
+    border: 2px solid #dc3545 !important;
+    animation: error .3s ease;
+}
+
+.error-input:hover,
+.error-input:focus {
+    box-shadow: none !important;
+}
+
+@keyframes error {
+    0% {
+        transform: translate(-3px, 3px);
+    }
+    25% {
+        transform: translate(-3px, -3px);
+    }
+    50% {
+        transform: translate(-3px, 3px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.formboot-title {
+    margin: 10px 5px;
+}
+
+.success-formboot {
+    padding: 10px;
+    margin: 15px 0;
+    width: 100%;
+    color: #2f8b3e;
+    background: #3ffd8854;
+    border-left: 4px solid #35dc80;
+    border-radius: 5px;
+}
+
+input {
+    outline: none;
+}
+
+.fields-items {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    margin: 8px 3px;
+}
+
+.fields-items label {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 4px 5px;
+    color: var(--color-formboot);
+}
+
+.fields-items input,
+.fields-items textarea,
+.fields-items select {
+    color: var(--color-formboot);
+    width: 100%;
+    height: 55px;
+    padding: 5px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 16px;
+    background: inherit;
+    caret-color: var(--color-formboot);
+}
+
+.fields-items input[type="checkbox"],
+.fields-items input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    background-color: var(--color-primary);
+}
+
+.fields-items:has(input[type="checkbox"]),
+.fields-items:has(input[type="radio"]) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.fields-items input[type="password"] {
+    font-weight: bold;
+}
+
+.chekebox {
+    position: relative;
+    width: 38px;
+    height: 20px;
+    border-radius: 50px;
+    background: #cccccc;
+    cursor: pointer;
+    display: flex;
+    padding: 4px;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) inset;
+}
+
+.chekebox.active {
+    background: var(--color-primary);
+}
+
+.chekebox .cursor-check {
+    width: 15px;
+    height: 15px;
+    border-radius: 50px;
+    background: #ffffff;
+    transition: transform .3s;
+}
+
+.chekebox.active .cursor-check {
+    transform: translateX(100%);
+}
+
+.chekebox input {
+    display: none;
+}
+
+.input-file {
+    width: 100%;
+    min-height: 200px;
+    margin: 0 5px;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-file img {
+    height: 150px;
+}
+
+.input-file input {
+    margin: 5px 0;
+    width: 50%;
+}
+
+.fields-items input[type=file]::file-selector-button {
+    margin-right: 8px;
+    border: none;
+    background: var(--color-primary);
+    padding: 8px 12px;
+    color: #fff;
+    cursor: pointer;
+    border: 1px dashed #ced4da
+}
+
+.fields-items textarea {
+    height: 100px;
+}
+
+.fields-items.radius input,
+.fields-items.radius textarea,
+.fields-items.radius select {
+    border-radius: 50px;
+    padding: 5px 20px;
+}
+
+.fields-items select option {
+    font-size: 18px;
+    height: 20px;
+    color: var(--color-formboot);
+    background:  #2f2f2f;
+}
+
+.fields-items.radius button {
+    border-radius: 50px;
+}
+
+.fields-items .badge-input {
+    position: absolute;
+    top: 52px;
+    right: 20px;
+    font-size: inherit !important;
+    z-index: 0;
+}
+
+.fields-items input:focus,
+.fields-items textarea:focus,
+.fields-items select:focus {
+    border-color: var(--color-formboot);
+    box-shadow: 0 0 1px 2px var(--input-shadow);
+    outline: none;
+}
+
+.fields-items.no-outline input:focus,
+.fields-items.no-outline textarea:focus,
+.fields-items.no-outline select:focus {
+    border-color:  var(--color-formboot);
+    box-shadow: none;
+}
+
+.fields-items button,
+.fields-items a {
+    /* width: 100%; */
+    margin: 10px 0;
+}
+
+.fields-row {
+    display: flex;
+    width: 100%;
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.fields-row .fields-items {
+    margin: 0;
+    width: 50%;
+    margin: 0 3px;
+}
+
+@media screen and (max-width: 566px) {
+    .fields-row {
+        flex-wrap: wrap;
+    }
+    .fields-row .fields-items {
+        width: 100%;
+    }
+}
+
+.log-form {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_block {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 400px;
+    padding: 20px;
+    text-align: center;
+    background: inherit;
+    border-radius: 5px;
+}
+
+/* step form */
+.step-head-form {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.step-items,
+.step-items-end {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    z-index: 3;
+}
+
+.label-step {
+    text-align: center;
+    font-size: 14px;
+}
+
+.step-items .circle,
+.step-items-end .circle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border: 2px solid #aaadaff1;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background: #FFF;
+    transition: color .3s ease-in-out;
+    color: #aaadaff1;
+}
+
+.step-items.active .circle,
+.step-items-end.active .circle {
+    color: #fff;
+    border: none;
+    background: var(--color-terssiaire);
+}
+
+.step-items .circle::after,
+.step-items .circle::before {
+    content: '';
+    position: absolute;
+    left: 60%;
+    width: 80%;
+    height: 2px;
+    background: #aaadaff1;
+    border-radius: 50px;
+    z-index: -1;
+}
+
+.step-items .circle::after {
+    transition: transform .3s ease-in-out;
+    transform: scaleX(0);
+    transform-origin: 0%;
+}
+
+.step-items.active .circle::after {
+    background: var(--color-terssiaire);
+    transform: scaleX(1);
+}
+
+.pages {
+    width: 100%;
+    overflow: hidden;
+}
+
+.pages-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    /* transition: transform .3s ease-in-out; */
+}
+
+.page {
+    width: 100%;
+    margin: 0 10px;
+}
